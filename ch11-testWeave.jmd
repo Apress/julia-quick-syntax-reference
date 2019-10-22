@@ -1,0 +1,44 @@
+---
+title :       Test of a document with embedded Julia code and citations
+date :        5th September 2019
+bibliography: ch11-biblio.bib
+---
+​
+
+# Section 1 (leave two rows from the document headers above)
+
+Weave.jl, annunced in @Pastell:2017, is a scientific report generator/literate programming tool for Julia developed by Matti Pastell, resembling  Knitr for R [see @Xie:2015].
+
+## Subsection 1.1
+​
+This should print a plot. Note that, with `echo=false`, we are not rendering the source code in the final PDF:
+
+```{julia;echo=false}
+using Plots
+pyplot()
+plot(sin, -2pi, pi, label="sine function")
+```
+Here instead we will render in the PDF both the script source code and its output:
+
+```{julia;}
+using DataFrames
+df = DataFrame(
+         colour = ["green","blue","white","green","green"],
+         shape  = ["circle", "triangle", "square","square","circle"],
+         border = ["dotted", "line", "line", "line", "dotted"],
+         area   = [1.1, 2.3, 3.1, missing, 5.2]
+    )
+df
+```
+
+Note also that we can refer to variables defined in previous chunks (or "cells", following Jupyter terminology):
+
+```{julia;}
+df.colour
+```
+
+### Subsubsection
+
+For a much more complete example see the [Weave documentation](http://weavejl.mpastell.com/stable/).
+
+# References
