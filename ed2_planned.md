@@ -8,6 +8,7 @@ _Please either note your idea (or wishlist) for subjects to be included in a pos
 - Add the following check if a package is already installed: `using Pkg; haskey(Pkg.installed(), "NameOfMyPackage")`
 
 ## New chapter (or section) to _create and register_ packages ? (but maybe out of scopus for a beginner book? )
+## Add a section to Ch05 - Input/Output to use [JDF.jl](https://github.com/xiaodaigh/JDF.jl) for saving and loading dataframes
 ## Add a section on Dates/Times types
 ## Add a section on the new Thread API
 
