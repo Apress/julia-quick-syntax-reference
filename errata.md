@@ -70,10 +70,15 @@ Details of error here. Highlight key pieces in **bold**.
 
 ## Ch09 - Working with data
 
-### On **page xx** [Summary of error]:
+### On **page 152** the example for the section "Computing the cumulative Sum by Categories" doesn't use the latest DataFrame API:
 
-Details of error here. Highlight key pieces in **bold**.
+The code for `dfCum` using the new API should be: 
 
+```
+dfCum = by(df,[:region,:product]) do subdf
+   return (year = subdf.year, cumProd = cumsum(subdf.production))
+end
+```
 
 
 ## Ch10 - Mathematical Libraries
