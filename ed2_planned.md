@@ -23,6 +23,8 @@ _Please either note your idea (or wishlist) for subjects to be included in a pos
 ## Miscelaneous:
 
 - Add `count(predicate, myArray)`
+- Add package [TableView](https://github.com/JuliaComputing/TableView.jl) to display Dfs and tables in Juno
+
 
 
 
