@@ -51,6 +51,7 @@ f1(f4,2)
 
 - Add `count(predicate, myArray)`
 - Add package [TableView](https://github.com/JuliaComputing/TableView.jl) to display Dfs and tables in Juno
+- Specify `while true ... end` for loops without conditions
 
 
 
