@@ -151,6 +151,78 @@ f1(f2,2,kw2=4,kw1=3)
 f1(f4,2)
 ```
 
+## Replace the example on thread instability with this one:
+
+```
+function f1(x)    
+    if x == 0
+        return 0
+    else
+        return 1.0
+    end
+end
+
+
+function f2(x)    
+    if x == 0
+        return 0.0
+    else
+        return 1.0
+    end
+end
+
+a = f1(0)
+typeof(a)
+b = f1(1)
+typeof(b)
+c = f2(0)
+typeof(c)
+d = f2(1)
+typeof(d)
+
+using BenchmarkTools
+@benchmark f1(20)
+@benchmark f2(20)
+
+@code_warntype f1(20) # union
+
+
+
+function f1(x)    
+    resultMap = Dict(0 => 0, 1=>1.0)
+    if haskey(resultMap,x)
+        return resultMap[x]
+    else
+        return 1.0
+    end
+end
+
+
+function f2(x)    
+    resultMap = Dict(0 => 0.0, 1=>1.0)
+    if haskey(resultMap,x)
+        return resultMap[x]
+    else
+        return 1.0
+    end
+end
+
+a = f1(0)
+typeof(a)
+b = f1(1)
+typeof(b)
+c = f2(0)
+typeof(c)
+d = f2(1)
+typeof(d)
+
+using BenchmarkTools
+@benchmark f1(20)
+@benchmark f2(20)
+
+@code_warntype f1(20) # any
+```
+
 ## Discuss the following extra packages:
 
 - Distributions
