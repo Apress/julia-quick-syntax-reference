@@ -70,8 +70,10 @@ These are the notes of the release, bla bla...
 ```
 
 
-If yo udid follow the [registration guideline](https://github.com/JuliaRegistries/RegistryCI.jl#automatic-merging-guidelines) the package will be automatically registered.
+If you did follow the [registration guideline](https://github.com/JuliaRegistries/RegistryCI.jl#automatic-merging-guidelines) the package will be automatically registered.
 
+## Add a section on package documentation and in particular on hosting it:
+https://juliadocs.github.io/Documenter.jl/stable/man/hosting/#Hosting-Documentation-1
 
 ## Add a section to Ch05 - Input/Output to use [JDF.jl](https://github.com/xiaodaigh/JDF.jl) for saving and loading dataframes
 ## Add a section on Dates/Times types
