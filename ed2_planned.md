@@ -76,6 +76,7 @@ If you did follow the [registration guideline](https://github.com/JuliaRegistrie
 https://juliadocs.github.io/Documenter.jl/stable/man/hosting/#Hosting-Documentation-1
 
 ## Add a section to Ch05 - Input/Output to use [JDF.jl](https://github.com/xiaodaigh/JDF.jl) for saving and loading dataframes
+## Add to Ch05 - Input/Output a reference to writedlm (maybe postponing CSV to dataframes discussion)
 ## Add a section on Dates/Times types
 ## Add a section on the new Thread API
 
