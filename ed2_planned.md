@@ -5,7 +5,7 @@ _Please either note your idea (or wishlist) for subjects to be included in a pos
 
 ## Extend discussion on packages to better describe modules and their relation with packages
 
-- Add the following check if a package is already installed: `using Pkg; haskey(Pkg.installed(), "NameOfMyPackage")`
+- Add the following check if a package is already installed: `using Pkg; haskey(Pkg.dependencies(), Base.UUID("UUIDOfMyPackage"))`
 - modules/submodule/export reexport: https://github.com/simonster/Reexport.jl
 
 
