@@ -239,7 +239,11 @@ using BenchmarkTools
 - Add `count(predicate, myArray)`
 - Add package [TableView](https://github.com/JuliaComputing/TableView.jl) to display Dfs and tables in Juno
 - Specify `while true ... end` for loops without conditions
-
+- Add the following items to Section 8.3.1; "Introspection tools":
+  - `@loss myfunction(myargs)`: Show the source code of the specificmethod invoked
+  - `names(mymodule,all=false)`: List the exported (or all) objects of mudule myModule
+  
+  
 
 
 
