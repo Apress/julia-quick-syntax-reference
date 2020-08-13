@@ -237,13 +237,15 @@ using BenchmarkTools
 ## Miscelaneous:
 
 - Add `count(predicate, myArray)`
-- Add package [TableView](https://github.com/JuliaComputing/TableView.jl) to display Dfs and tables in Juno
+- Add package [TableView](https://github.com/JuliaComputing/TableView.jl) to display Dfs and tables in Juno.. no.. now obsolete for VSCode
 - Specify `while true ... end` for loops without conditions
 - Add the following items to Section 8.3.1; "Introspection tools":
   - `@less myFunction(myArgs)`: Show the source code of the specific method invoked
   - `@edit myFunction(myArgs)`: Like `@loss` but it opens the source code in an editor
   - `@code_native expr`, `@code_llvm expr`, `@code_typed expr`, `@code_lowered expr`: Various low-level interpretation of expr (and no, `@code_source expr` for an expression defined in the REPL is not yet supported, but it may be in the future: https://github.com/JuliaLang/julia/issues/2625 )
   - `names(mymodule,all=false)`: List the exported (or all) objects of mudule myModule
+- Add how to upgrade Julia versions without reinstall all packages: https://stackoverflow.com/a/63391099/1586860
+- Move everything Juno related to VS Code
   
   
 
