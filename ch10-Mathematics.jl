@@ -123,7 +123,7 @@ end
 
 using JuMP, Ipopt
 
-m = Model(with_optimizer(Ipopt.Optimizer, print_level=0))
+m = Model(optimizer_with_attributes(Ipopt.Optimizer, "print_level"=>0))
 
 @variable(m, 0 <= p, start=1, base_name="Quantities of pizzas")
 @variable(m, 0 <= s, start=1, base_name="Quantities of sandwiches")
