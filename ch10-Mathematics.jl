@@ -4,14 +4,15 @@
 # Science Programming, Apress
 # https://doi.org/10.1007/978-1-4842-5190-4
 # Licence: Open Domain
+# Attention: this file has been updated from the version in the book
 ################################################################################
 
-# Chapeter 10 : Mathematical libraries
+# Chapter 10 : Mathematical libraries
 
 
 # Code snippet #10.1: Numerically solve a linear problem
 
-using CSV, JuMP, GLPK
+using CSV, JuMP, GLPK, DataFrames
 
 # Define sets #
 #  Sets
@@ -48,7 +49,7 @@ d_table = CSV.read(IOBuffer("""
 plants     new-york  chicago  topeka
 seattle    2.5       1.7      1.8
 san-diego  2.5       1.8      1.4
-"""),delim=" ", ignorerepeated=true, copycols=true)
+"""), DataFrame, delim=" ", ignorerepeated=true, copycols=true)
 d = Dict( (r[:plants],m) => r[Symbol(m)] for r in eachrow(d_table), m in markets)
 # Here we are converting the table in a "(plant, market) => distance" dictionary
 # r[:plants]:   the first key, using the cell at the given row and `plants` field
@@ -65,7 +66,7 @@ c = Dict() # transport cost in thousands of dollars per case ;
 [ c[p,m] = f * d[p,m] / 1000 for p in plants, m in markets]
 
 # Model declaration (transport model)
-trmodel = Model(with_optimizer(GLPK.Optimizer,msg_lev=GLPK.MSG_ON)) # we choose GLPK with a verbose output
+trmodel = Model(optimizer_with_attributes(GLPK.Optimizer, "msg_lev"=>GLPK.GLP_MSG_ON)) # we choose GLPK with a verbose output
 
 ## Define variables ##
 #  Variables
