@@ -90,7 +90,7 @@ plot!(x,y[:,3], seriestype=:scatter)
 using DataFrames, StatsPlots
 # Let's use a modified version of our example data with more years and just one region:
 df = DataFrame(
-  product       = ["Softwood","Softwood","Softwood","Softwood","Hardwood","Hardwood","Hardwood","Hardwood"],
+  product     = ["Softwood","Softwood","Softwood","Softwood","Hardwood","Hardwood","Hardwood","Hardwood"],
   year        = [2010,2011,2012,2013,2010,2011,2012,2013],
   production  = [120,150,170,160,100,130,165,158],
   consumption = [70,90,100,95,   80,95,110,120]

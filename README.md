@@ -9,7 +9,7 @@ Download the files as a zip using the green button, or clone the repository to y
 
 ## How to run the code
 
-To run the code of the book:
+To run the code in the book as last updated (to work with latest versions - as of today - of the various packages) perform the following passages:
 
 - Clone the repo...
 
@@ -17,12 +17,14 @@ To run the code of the book:
 - Enter the cloned directory...
 
   `cd julia-quick-syntax-reference`  
-- Checkout the revision with the code of the published book + the projects packages details...
 
-  `git checkout v1.1`
-- Start Julia **1.3**... (the package `Cxx` doesn't work with Julia versions > 1.3, otherwise the other packages are fine )
+- Start Julia:
 
   `julia`
+
+  Notes:
+    - package `Cxx` doesn't work with Julia versions > 1.3 (at time of writing)
+
 - Enter the package mode..
 
   `]`
@@ -32,6 +34,10 @@ To run the code of the book:
 - "Instantiate" the repository with the packages described in Manifest.toml...
 
   `instantiate`
+- A few packages would still need to be build on the first usage, for example GLPK:
+
+  `] build GLPK`
+
 
 
 ## Releases

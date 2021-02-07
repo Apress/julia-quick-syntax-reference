@@ -28,6 +28,7 @@ end
 sentence = getUserInput(String,"Which sentence do you want to be repeated?");
 n        = getUserInput(Int64,"How many times do you want it to be repeated?");
 [println(sentence) for i in 1:n]
+
 println("Done!")
 
 # Code snippet #5.2: JSON import

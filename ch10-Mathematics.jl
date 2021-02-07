@@ -18,7 +18,7 @@ using CSV, JuMP, GLPK, DataFrames
 #  Sets
 #      i   canning plants   / seattle, san-diego /
 #      j   markets          / new-york, chicago, topeka / ;
-plants  = ["seattle","san-diego"]          # canning plants
+plants  = ["seattle","san-diego"]          # canning plants]
 markets = ["new-york","chicago","topeka"]  # markets
 
 # Define parameters #
@@ -172,7 +172,7 @@ z = utility.evalf(subs=Dict(qₚ=>qₚ_num, qₛ=>qₛ_num)) #750.892857142857
 
 # Code snippet #10.4: Fitting data to a given model
 
-using LsqFit,CSV,Plots
+using LsqFit,CSV,DataFrames,Plots
 # **** Fit volumes to logistic model ***
 @. model(age, pars) = pars[1] / (1+exp(-pars[2] * (age - pars[3])) )
 obsVols = CSV.read(IOBuffer("""
@@ -182,7 +182,7 @@ age  vol
 60   301
 90   420
 145  502
-"""),delim=" ", ignorerepeated=true, copycols=true)
+"""), DataFrame, delim=" ", ignorerepeated=true, copycols=true)
 par0 = [600, 0.02, 60]
 fit = curve_fit(model, obsVols.age, obsVols.vol, par0)
 fit.param # [497.07, 0.05, 53.5]
